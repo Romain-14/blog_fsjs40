@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/style.css" />
+		<title>My blog - Home</title>
+	</head>
+	<body>
+		<header>
+			<h1>My blog</h1>
+			<nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+		</header>
+        <hr />
+		<main>
+			<section>
+				<h2>Latest article</h2>
+
+				<% for(const data of datas) { %>
+				<article>
+					<h3><%= data.title %></h3>
+					<p><%= data.content %></p>
+					<a href="/article/<%= data.id %>"> Read more </a>
+					<p>
+						By <%= data.author %> on <%= new
+						Date(data.date).toLocaleDateString() %>
+					</p>
+				</article>
+				<hr />
+				<% } %>
+			</section>
+		</main>
+
+        <script src="/main.js"></script>
+	</body>
+</html>
